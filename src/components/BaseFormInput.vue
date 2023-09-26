@@ -48,7 +48,6 @@ export default {
     padding: 8px 16px;
     color: $colors-gray;
     font-size: 13px;
-
   }
 
   &__input {

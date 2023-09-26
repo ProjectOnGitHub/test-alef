@@ -38,6 +38,7 @@ export default {
   font-weight: 400;
   padding: 10px 20px;
   max-width: max-content;
+  height: max-content;
 
   &_add {
     color: $colors-primary;

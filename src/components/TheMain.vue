@@ -1,7 +1,49 @@
 <template>
   <main class="main">
     <div class="main__container">
-      <base-form />
+      <base-form>
+        <base-form-fieldset
+          title="Персональные данные"
+        >
+          <base-form-input
+            input-name="name"
+            input-type="text"
+            label-text="Имя"
+          />
+          <base-form-input
+            input-name="age"
+            input-type="number"
+            label-text="Возраст"
+          />
+        </base-form-fieldset>
+        <base-form-fieldset
+          title="Дети (макс. 5)"
+          class="form__fieldset_row"
+        >
+          <base-button class-name="button_add">
+            Добавить
+          </base-button>
+          <div class="form__fieldset-container">
+            <base-form-input
+              input-name="name"
+              input-type="text"
+              label-text="Имя"
+            />
+            <base-form-input
+              input-name="age"
+              input-type="number"
+              label-text="Возраст"
+            />
+            <base-button class-name="button_delete">
+              Удалить
+            </base-button>
+          </div>
+        </base-form-fieldset>
+
+        <base-button class-name="button_save">
+          Сохранить
+        </base-button>
+      </base-form>
     </div>
   </main>
 </template>
@@ -9,9 +51,17 @@
 <script>
 
 import BaseForm from './BaseForm.vue';
+import BaseFormFieldset from './BaseFormFieldset.vue';
+import BaseFormInput from './BaseFormInput.vue';
+import BaseButton from './BaseButton.vue';
 
 export default {
-  components: { BaseForm },
+  components: {
+    BaseButton,
+    BaseFormFieldset,
+    BaseForm,
+    BaseFormInput,
+  },
 
 };
 </script>
@@ -22,10 +72,11 @@ export default {
   box-sizing: border-box;
 
   &__container {
-    @include  flexible();
+    @include flexible();
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    box-sizing: border-box;
   }
 }
 
