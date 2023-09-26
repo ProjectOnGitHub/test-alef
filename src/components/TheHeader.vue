@@ -27,10 +27,11 @@ export default {
   components: { SvgIcon },
   data() {
     return {
-      images: imagesMap
+      images: imagesMap,
     };
-  }
+  },
 };
+
 </script>
 
 <style lang="scss" scoped>
@@ -38,15 +39,17 @@ export default {
   @include flexible();
   justify-content: center;
   box-sizing: border-box;
+  box-shadow: $box-shadow;
 
   &__container {
     @include gridable();
-    max-width: 1366px;
+    grid-template-columns: max-content 1fr;
     grid-template-columns: max-content 1fr;
     justify-content: space-between;
     padding: 22px 92px;
     align-items: center;
     gap: 24px;
+    max-width: 1366px;
   }
 
   &__navigation {

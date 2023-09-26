@@ -186,13 +186,7 @@ module.exports = {
     ],
     'comma-dangle': [
       'error',
-      {
-        arrays: 'never',
-        objects: 'never',
-        imports: 'never',
-        exports: 'never',
-        functions: 'never'
-      }
+      'always-multiline'
     ],
     'no-console': 'error',
     'no-debugger': 'error',
@@ -212,6 +206,7 @@ module.exports = {
         allowSamePrecedence: true
       }
     ],
+    'no-trailing-spaces': ["error", { "skipBlankLines": true }],
     'import/extensions': 'off',
     'import/prefer-default-export': 'off',
     'no-unused-expressions': 'error',

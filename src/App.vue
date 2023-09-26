@@ -12,7 +12,7 @@ import TheHeader from './components/TheHeader.vue';
 import TheMain from './components/TheMain.vue';
 
 export default {
-  components: { TheHeader, TheMain, TheFooter }
+  components: { TheHeader, TheMain, TheFooter },
 };
 </script>
 
@@ -23,10 +23,12 @@ export default {
   justify-items: center;
   align-content: space-between;
   box-sizing: border-box;
-  height: 100%;
+  min-height: 100%;
+  grid-template-rows: auto 1fr auto;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   font-weight: normal;
   font-size: 14px;
+  color: $colors-black;
   background-color: $colors-white;
   box-shadow: $box-shadow;
 }
