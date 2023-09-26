@@ -21,6 +21,10 @@
           class="form__fieldset_row"
         >
           <base-button class-name="button_add">
+            <svg-icon
+              icon-name="plus"
+              icon-class="plus"
+            />
             Добавить
           </base-button>
           <div class="form__fieldset-container">
@@ -44,6 +48,8 @@
           Сохранить
         </base-button>
       </base-form>
+
+      <person-info />
     </div>
   </main>
 </template>
@@ -54,9 +60,13 @@ import BaseForm from './BaseForm.vue';
 import BaseFormFieldset from './BaseFormFieldset.vue';
 import BaseFormInput from './BaseFormInput.vue';
 import BaseButton from './BaseButton.vue';
+import PersonInfo from './PersonInfo.vue';
+import SvgIcon from './SvgIcon.vue';
 
 export default {
   components: {
+    SvgIcon,
+    PersonInfo,
     BaseButton,
     BaseFormFieldset,
     BaseForm,
