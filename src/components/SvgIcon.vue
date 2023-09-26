@@ -12,13 +12,13 @@ export default {
   props: {
     iconName: {
       type: String,
-      required: true
+      required: true,
     },
     iconClass: {
       type: String,
-      default: ''
-    }
-  }
+      default: '',
+    },
+  },
 };
 </script>
 
@@ -26,5 +26,10 @@ export default {
 .logo {
   width: 93px;
   height: 29px;
+}
+
+.plus {
+  width: 24px;
+  height: 24px;
 }
 </style>

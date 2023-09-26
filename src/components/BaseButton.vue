@@ -34,7 +34,7 @@ export default {
   @include button();
   border-radius: 100px;
   font-size: 14px;
-  font-weight: 1.7;
+  line-height: 1.7;
   font-weight: 400;
   padding: 10px 20px;
   max-width: max-content;
@@ -44,6 +44,7 @@ export default {
     color: $colors-primary;
     border: 2px solid $colors-primary;
     background-color: $colors-white;
+    gap: 4px;
   }
 
   &_save {

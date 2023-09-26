@@ -51,15 +51,7 @@ export default {
     }
 
     &-title {
-      color: $colors-black;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 500;
-      line-height: 1.5;
-      box-sizing: border-box;
-      padding: 10px 0;
-      margin: 0;
-      flex-grow: 1
+      @include defaultTitle;
     }
   }
 }

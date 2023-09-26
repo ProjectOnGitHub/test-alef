@@ -8,9 +8,7 @@
 
 .form {
   @include flexible();
-  flex-direction: column;
-  max-width: 616px;
-  box-sizing: border-box;
+  @include defaultContainer;
   gap: 33px;
 }
 
