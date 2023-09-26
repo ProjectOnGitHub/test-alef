@@ -18,15 +18,16 @@ export default {
 
 <style lang="scss" scoped>
 .root {
-  @include gridable(100%);
-  grid-template-areas: 'block';
+  @include gridable();
   grid-template-columns: 1fr;
   justify-items: center;
   align-content: space-between;
   box-sizing: border-box;
   height: 100%;
-  font-family: 'Blender Pro', Arial, Helvetica, sans-serif;
-  font-weight: 400;
-  line-height: 1.21;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  background-color: $colors-white;
+  box-shadow: $box-shadow;
 }
 </style>

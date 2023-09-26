@@ -21,3 +21,10 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.logo {
+  width: 93px;
+  height: 29px;
+}
+</style>

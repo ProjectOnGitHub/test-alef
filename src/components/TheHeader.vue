@@ -7,8 +7,12 @@
       />
       <nav class="header__navigation">
         <ul class="header__menu">
-          <li class="header__menu-item">Форма</li>
-          <li class="header__menu-item">Превью</li>
+          <li class="header__menu-item">
+            Форма
+          </li>
+          <li class="header__menu-item">
+            Превью
+          </li>
         </ul>
       </nav>
     </div>
@@ -29,4 +33,33 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.header {
+  @include flexible();
+  justify-content: center;
+  box-sizing: border-box;
+
+  &__container {
+    @include gridable();
+    max-width: 1366px;
+    grid-template-columns: max-content 1fr;
+    justify-content: space-between;
+    padding: 22px 92px;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &__navigation {
+    @include flexible();
+    justify-content: center;
+  }
+
+  &__menu {
+    @include unmarkedList;
+    @include flexible(max-content);
+    gap: 24px;
+    line-height: 1.71;
+    color: $colors-gray;
+  }
+}
+</style>
