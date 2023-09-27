@@ -8,10 +8,20 @@
       <nav class="header__navigation">
         <ul class="header__menu">
           <li class="header__menu-item">
-            Форма
+            <base-button
+              class-name="button_menu"
+              @click="$emit('clickToFormButton')"
+            >
+              Форма
+            </base-button>
           </li>
           <li class="header__menu-item">
-            Превью
+            <base-button
+              class-name="button_menu"
+              @click="$emit('clickToPreviewButton')"
+            >
+              Удалить
+            </base-button>
           </li>
         </ul>
       </nav>
@@ -22,9 +32,13 @@
 <script>
 import imagesMap from '../utils/images';
 import SvgIcon from './SvgIcon.vue';
+import BaseButton from './BaseButton.vue';
 
 export default {
-  components: { SvgIcon },
+  components: {
+    BaseButton,
+    SvgIcon,
+  },
   data() {
     return {
       images: imagesMap,

@@ -1,7 +1,7 @@
 <template>
   <main class="main">
     <div class="main__container">
-      <base-form>
+      <base-form v-if="viewComponent">
         <base-form-fieldset
           title="Персональные данные"
         >
@@ -49,7 +49,7 @@
         </base-button>
       </base-form>
 
-      <person-info />
+      <person-info v-else />
     </div>
   </main>
 </template>
@@ -72,6 +72,12 @@ export default {
     BaseForm,
     BaseFormInput,
   },
+  props: {
+    viewComponent: {
+      type: Boolean,
+      default: true,
+    },
+  },
 
 };
 </script>
@@ -80,6 +86,7 @@ export default {
 .main {
   @include gridable();
   box-sizing: border-box;
+  grid-row: 2;
 
   &__container {
     @include flexible();

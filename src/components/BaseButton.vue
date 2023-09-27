@@ -4,6 +4,7 @@
     :class="className"
     :name="nameButton"
     class="button"
+    @click="$emit('click')"
   >
     <slot></slot>
   </button>
@@ -54,6 +55,12 @@ export default {
 
   &_delete {
     color: $colors-primary;
+    background-color: $colors-white;
+    padding: 0;
+  }
+
+  &_menu {
+    color: $colors-gray;
     background-color: $colors-white;
     padding: 0;
   }
