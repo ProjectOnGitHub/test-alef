@@ -58,7 +58,6 @@ export default {
   &__container {
     @include gridable();
     grid-template-columns: max-content 1fr;
-    grid-template-columns: max-content 1fr;
     justify-content: space-between;
     padding: 22px 92px;
     align-items: center;

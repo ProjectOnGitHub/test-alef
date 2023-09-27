@@ -20,35 +20,32 @@
           title="Дети (макс. 5)"
           class="form__fieldset_row"
         >
-          <base-button class-name="button_add">
+          <base-button
+            class-name="button_add"
+            type-button="button"
+            @click="addComponent"
+          >
             <svg-icon
               icon-name="plus"
               icon-class="plus"
             />
             Добавить
           </base-button>
-          <div class="form__fieldset-container">
-            <base-form-input
-              input-name="name"
-              input-type="text"
-              label-text="Имя"
+          <ul
+            v-for="(item, index) in inputsList"
+            :key="index"
+            class="form__list"
+          >
+            <component
+              :is="item"
+              @clickDeleteButton="deleteInput(index)"
             />
-            <base-form-input
-              input-name="age"
-              input-type="number"
-              label-text="Возраст"
-            />
-            <base-button class-name="button_delete">
-              Удалить
-            </base-button>
-          </div>
+          </ul>
         </base-form-fieldset>
-
         <base-button class-name="button_save">
           Сохранить
         </base-button>
       </base-form>
-
       <person-info v-else />
     </div>
   </main>
@@ -62,6 +59,7 @@ import BaseFormInput from './BaseFormInput.vue';
 import BaseButton from './BaseButton.vue';
 import PersonInfo from './PersonInfo.vue';
 import SvgIcon from './SvgIcon.vue';
+import BaseFormListItem from './BaseFormListItem.vue';
 
 export default {
   components: {
@@ -71,6 +69,7 @@ export default {
     BaseFormFieldset,
     BaseForm,
     BaseFormInput,
+    BaseFormListItem,
   },
   props: {
     viewComponent: {
@@ -78,7 +77,22 @@ export default {
       default: true,
     },
   },
+  data() {
+    return {
+      inputsList: [],
 
+    };
+  },
+  methods: {
+    addComponent() {
+      if (this.inputsList.length < 5) {
+        this.inputsList.push('base-form-list-item');
+      }
+    },
+    deleteInput(index) {
+      this.inputsList.splice(index, 1);
+    },
+  },
 };
 </script>
 

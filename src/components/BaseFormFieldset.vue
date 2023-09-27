@@ -43,13 +43,6 @@ export default {
       align-items: center;
     }
 
-    &-container {
-      @include flexible();
-      gap: 10px 18px;
-      align-items: center;
-      flex-grow: 1;
-    }
-
     &-title {
       @include defaultTitle;
     }

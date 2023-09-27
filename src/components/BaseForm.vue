@@ -4,12 +4,17 @@
   </form>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 .form {
   @include flexible();
   @include defaultContainer;
   gap: 33px;
+
+  &__list {
+    @include flexible();
+    @include unmarkedList;
+  }
 }
 
 </style>
