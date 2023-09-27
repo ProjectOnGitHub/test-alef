@@ -10,6 +10,7 @@
           <li class="header__menu-item">
             <base-button
               class-name="button_menu"
+              name-button="menu"
               @click="$emit('clickToFormButton')"
             >
               Форма
@@ -18,6 +19,7 @@
           <li class="header__menu-item">
             <base-button
               class-name="button_menu"
+              name-button="menu"
               @click="$emit('clickToPreviewButton')"
             >
               Удалить

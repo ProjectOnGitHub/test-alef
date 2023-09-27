@@ -1,8 +1,8 @@
 <template>
   <button
-    :type="typeButton"
+    type="button"
     :class="className"
-    :name="nameButton"
+    :name="`button-${nameButton}`"
     class="button"
     @click="$emit('click')"
   >

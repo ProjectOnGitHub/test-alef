@@ -22,7 +22,7 @@
         >
           <base-button
             class-name="button_add"
-            type-button="button"
+            name-button="menu"
             @click="addComponent"
           >
             <svg-icon
@@ -42,7 +42,10 @@
             />
           </ul>
         </base-form-fieldset>
-        <base-button class-name="button_save">
+        <base-button
+          class-name="button_save"
+          name-button="save"
+        >
           Сохранить
         </base-button>
       </base-form>

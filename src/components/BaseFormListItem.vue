@@ -12,8 +12,7 @@
     />
     <base-button
       class-name="button_delete"
-      name-button="delete button"
-      type-button="button"
+      name-button="delete"
       @click="$emit('clickDeleteButton')"
     >
       Удалить
