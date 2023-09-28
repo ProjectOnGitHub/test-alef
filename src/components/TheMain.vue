@@ -6,11 +6,13 @@
           title="Персональные данные"
         >
           <base-form-input
+            v-model="personName"
             input-name="name"
             input-type="text"
             label-text="Имя"
           />
           <base-form-input
+            v-model="personAge"
             input-name="age"
             input-type="number"
             label-text="Возраст"
@@ -45,11 +47,15 @@
         <base-button
           class-name="button_save"
           name-button="save"
+          @click="addPersonInfo"
         >
           Сохранить
         </base-button>
       </base-form>
-      <person-info v-else />
+      <person-info
+        v-else
+        :person-info="person"
+      />
     </div>
   </main>
 </template>
@@ -83,7 +89,12 @@ export default {
   data() {
     return {
       inputsList: [],
-
+      personName: '',
+      personAge: '',
+      person: {
+        name: null,
+        age: null,
+      },
     };
   },
   methods: {
@@ -94,6 +105,9 @@ export default {
     },
     deleteInput(index) {
       this.inputsList.splice(index, 1);
+    },
+    addPersonInfo() {
+      this.person = { name: this.personName, age: this.personAge };
     },
   },
 };

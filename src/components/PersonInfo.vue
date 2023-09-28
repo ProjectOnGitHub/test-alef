@@ -5,7 +5,7 @@
         Персональные данные
       </h2>
       <p class="person__info-description">
-        Имя, 30 лет
+        {{ personInfo.name }}, {{ personInfo.age }} лет
       </p>
     </div>
     <div class="person__info">
@@ -23,6 +23,17 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    personInfo: {
+      type: Object,
+      default: () => {},
+    },
+  },
+};
+</script>
 
 <style scoped lang="scss">
 .person {

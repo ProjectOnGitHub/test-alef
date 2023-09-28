@@ -22,7 +22,7 @@
               name-button="menu"
               @click="$emit('clickToPreviewButton')"
             >
-              Удалить
+              Превью
             </base-button>
           </li>
         </ul>
