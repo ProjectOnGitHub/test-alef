@@ -13,11 +13,12 @@
         Дети
       </h2>
       <ul class="person__list">
-        <li class="person__list-item">
-          Имя, 10 лет
-        </li>
-        <li class="person__list-item">
-          Имя, 10 лет
+        <li
+          v-for="(child, index) in childrenInfo"
+          :key="index"
+          class="person__list-item"
+        >
+          {{ child.name }}, {{ child.age }} лет
         </li>
       </ul>
     </div>
@@ -28,6 +29,10 @@
 export default {
   props: {
     personInfo: {
+      type: Object,
+      default: () => {},
+    },
+    childrenInfo: {
       type: Object,
       default: () => {},
     },

@@ -13,10 +13,6 @@
 <script>
 export default {
   props: {
-    typeButton: {
-      type: String,
-      default: '',
-    },
     className: {
       type: String,
       default: '',

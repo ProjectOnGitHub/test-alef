@@ -41,6 +41,7 @@
             <component
               :is="item"
               @clickDeleteButton="deleteInput(index)"
+              @input-change="handleInputChange(index,$event)"
             />
           </ul>
         </base-form-fieldset>
@@ -55,6 +56,7 @@
       <person-info
         v-else
         :person-info="person"
+        :children-info="children"
       />
     </div>
   </main>
@@ -95,6 +97,7 @@ export default {
         name: null,
         age: null,
       },
+      children: [],
     };
   },
   methods: {
@@ -107,7 +110,14 @@ export default {
       this.inputsList.splice(index, 1);
     },
     addPersonInfo() {
-      this.person = { name: this.personName, age: this.personAge };
+      this.person = {
+        name: this.personName,
+        age: this.personAge,
+      };
+    },
+
+    handleInputChange(index, data) {
+      this.children[index] = data;
     },
   },
 };
