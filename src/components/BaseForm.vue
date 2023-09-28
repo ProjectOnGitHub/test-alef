@@ -14,6 +14,13 @@
   &__list {
     @include flexible();
     @include unmarkedList;
+
+    &-item {
+      @include flexible();
+      gap: 10px 18px;
+      align-items: center;
+      flex-grow: 1;
+    }
   }
 }
 

@@ -34,15 +34,31 @@
             Добавить
           </base-button>
           <ul
-            v-for="(item, index) in inputsList"
+            v-for="(item, index) in children"
             :key="index"
             class="form__list"
           >
-            <component
-              :is="item"
-              @clickDeleteButton="deleteInput(index)"
-              @input-change="handleInputChange(index,$event)"
-            />
+            <li class="form__list-item">
+              <base-form-input
+                v-model="item.name"
+                input-name="name"
+                input-type="text"
+                label-text="Имя"
+              />
+              <base-form-input
+                v-model="item.age"
+                input-name="age"
+                input-type="number"
+                label-text="Возраст"
+              />
+              <base-button
+                class-name="button_delete"
+                name-button="delete"
+                @click="deleteInput(index)"
+              >
+                Удалить
+              </base-button>
+            </li>
           </ul>
         </base-form-fieldset>
         <base-button
@@ -70,7 +86,6 @@ import BaseFormInput from './BaseFormInput.vue';
 import BaseButton from './BaseButton.vue';
 import PersonInfo from './PersonInfo.vue';
 import SvgIcon from './SvgIcon.vue';
-import BaseFormListItem from './BaseFormListItem.vue';
 
 export default {
   components: {
@@ -80,7 +95,6 @@ export default {
     BaseFormFieldset,
     BaseForm,
     BaseFormInput,
-    BaseFormListItem,
   },
   props: {
     viewComponent: {
@@ -102,12 +116,17 @@ export default {
   },
   methods: {
     addComponent() {
-      if (this.inputsList.length < 5) {
-        this.inputsList.push('base-form-list-item');
+      if (this.children.length < 5) {
+        const newItem = {
+          id: Date.now(),
+          name: null,
+          age: null,
+        };
+        this.children.push(newItem);
       }
     },
     deleteInput(index) {
-      this.inputsList.splice(index, 1);
+      this.children.splice(index, 1);
     },
     addPersonInfo() {
       this.person = {
@@ -116,9 +135,6 @@ export default {
       };
     },
 
-    handleInputChange(index, data) {
-      this.children[index] = data;
-    },
   },
 };
 </script>
