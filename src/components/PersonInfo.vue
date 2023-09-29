@@ -4,15 +4,33 @@
       <h2 class="person__info-title">
         Персональные данные
       </h2>
-      <p class="person__info-description">
+      <p
+        v-if="personInfo.name"
+        class="person__info-description"
+      >
         {{ personInfo.name }}, {{ personInfo.age }} лет
+      </p>
+      <p
+        v-else-if="!personInfo.name"
+        class="person__info-description"
+      >
+        Персональные данные не внесены
       </p>
     </div>
     <div class="person__info">
       <h2 class="person__info-title">
         Дети
       </h2>
-      <ul class="person__list">
+      <p
+        v-if="childrenInfo.name"
+        class="person__info-description"
+      >
+        Данные о детях не внесены
+      </p>
+      <ul
+        v-else-if="!childrenInfo.name"
+        class="person__list"
+      >
         <li
           v-for="(child, index) in childrenInfo"
           :key="index"
@@ -30,11 +48,13 @@ export default {
   props: {
     personInfo: {
       type: Object,
-      default: () => {},
+      default: () => {
+      },
     },
     childrenInfo: {
       type: Object,
-      default: () => {},
+      default: () => {
+      },
     },
   },
 };
@@ -55,6 +75,7 @@ export default {
       @include defaultTitle;
     }
   }
+
   &__info-description, &__list {
     margin: 0;
     font-size: 16px;
