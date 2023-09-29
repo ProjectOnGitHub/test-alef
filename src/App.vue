@@ -4,7 +4,7 @@
       @clickToFormButton="viewForm"
       @clickToPreviewButton="viewPreview"
     />
-    <the-main :view-component="isVisible" />
+    <the-main :is-active="isActive" />
     <the-footer />
   </div>
 </template>
@@ -19,18 +19,18 @@ export default {
 
   data() {
     return {
-      isVisible: true,
+      isActive: true,
     };
   },
   methods: {
     viewForm() {
-      if (!this.isVisible) {
-        this.isVisible = true;
+      if (!this.isActive) {
+        this.isActive = true;
       }
     },
     viewPreview() {
-      if (this.isVisible) {
-        this.isVisible = false;
+      if (this.isActive) {
+        this.isActive = false;
       }
     },
   },

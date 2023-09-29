@@ -1,7 +1,7 @@
 <template>
   <main class="main">
     <div class="main__container">
-      <base-form v-if="viewComponent">
+      <base-form v-if="isActive">
         <base-form-fieldset
           title="Персональные данные"
         >
@@ -26,7 +26,7 @@
         >
           <base-button
             :is-disabled="isMaxChildren"
-            class-name="button_add"
+            :class-name="button_add"
             name-button="menu"
             @click="addComponent"
           >
@@ -73,7 +73,7 @@
         <transition name="fade">
           <base-button
             v-show="showButtonSave"
-            class-name="button_save"
+            :class-name="button_save"
             name-button="save"
             :is-disabled="isSaveButtonDisabled"
             @click="addPersonInfo"
@@ -110,7 +110,7 @@ export default {
     BaseFormInput,
   },
   props: {
-    viewComponent: {
+    isActive: {
       type: Boolean,
       default: true,
     },
