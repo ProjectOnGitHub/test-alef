@@ -21,14 +21,9 @@
       <h2 class="person__info-title">
         Дети
       </h2>
-      <p
-        v-if="childrenInfo.name"
-        class="person__info-description"
-      >
-        Данные о детях не внесены
-      </p>
+
       <ul
-        v-else-if="!childrenInfo.name"
+        v-if="childrenInfo.name"
         class="person__list"
       >
         <li
@@ -39,6 +34,12 @@
           {{ child.name }}, {{ child.age }} лет
         </li>
       </ul>
+      <p
+        v-else-if="!childrenInfo.name"
+        class="person__info-description"
+      >
+        Данные о детях не внесены
+      </p>
     </div>
   </div>
 </template>
