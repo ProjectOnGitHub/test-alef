@@ -23,6 +23,7 @@
           class="form__fieldset_row"
         >
           <base-button
+            :is-disabled="isMaxChildren"
             class-name="button_add"
             name-button="menu"
             @click="addComponent"
@@ -33,12 +34,16 @@
             />
             Добавить
           </base-button>
-          <ul
-            v-for="(item, index) in children"
-            :key="index"
+          <transition-group
+            name="fade"
+            tag="ul"
             class="form__list"
           >
-            <li class="form__list-item">
+            <li
+              v-for="(item, index) in children"
+              :key="item.id"
+              class="form__list-item"
+            >
               <base-form-input
                 v-model="item.name"
                 input-name="name"
@@ -59,15 +64,18 @@
                 Удалить
               </base-button>
             </li>
-          </ul>
+          </transition-group>
         </base-form-fieldset>
-        <base-button
-          class-name="button_save"
-          name-button="save"
-          @click="addPersonInfo"
-        >
-          Сохранить
-        </base-button>
+        <transition name="fade">
+          <base-button
+            v-show="showButtonSave"
+            class-name="button_save"
+            name-button="save"
+            @click="addPersonInfo"
+          >
+            Сохранить
+          </base-button>
+        </transition>
       </base-form>
       <person-info
         v-else
@@ -104,7 +112,6 @@ export default {
   },
   data() {
     return {
-      inputsList: [],
       personName: '',
       personAge: '',
       person: {
@@ -114,9 +121,19 @@ export default {
       children: [],
     };
   },
+  computed: {
+    showButtonSave() {
+      return this.children.length > 0;
+    },
+
+    isMaxChildren() {
+      return this.children.length >= 5;
+    },
+  },
+
   methods: {
     addComponent() {
-      if (this.children.length < 5) {
+      if (!this.isMaxChildren) {
         const newItem = {
           id: Date.now(),
           name: null,
@@ -134,7 +151,6 @@ export default {
         age: this.personAge,
       };
     },
-
   },
 };
 </script>
@@ -154,4 +170,14 @@ export default {
   }
 }
 
+.fade {
+  &-enter-active, &-leave-active {
+    transition: opacity 0.5s linear;
+  }
+
+  &-enter, &-leave-to {
+    opacity: 0;
+  }
+
+}
 </style>

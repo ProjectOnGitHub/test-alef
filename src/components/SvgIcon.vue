@@ -31,5 +31,7 @@ export default {
 .plus {
   width: 24px;
   height: 24px;
+  transition: 0.5s ease;
+  fill: $colors-primary;
 }
 </style>

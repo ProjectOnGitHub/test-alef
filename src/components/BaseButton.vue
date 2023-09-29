@@ -2,6 +2,7 @@
   <button
     type="button"
     :class="className"
+    :disabled="isDisabled"
     :name="`button-${nameButton}`"
     class="button"
     @click="$emit('click')"
@@ -21,11 +22,15 @@ export default {
       type: String,
       default: '',
     },
+    isDisabled: {
+      type: Boolean,
+      default: false,
+    },
   },
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .button {
   @include flexible();
   @include button();
@@ -37,22 +42,56 @@ export default {
   max-width: max-content;
   height: max-content;
 
+  &:disabled,
+
+  &:disabled:hover {
+    cursor: default;
+    color: $colors-gray-s;
+    background-color: $colors-white;
+    border: 2px solid $colors-gray-s;
+
+    .plus {
+      fill: $colors-gray-s;
+    }
+  }
+
   &_add {
     color: $colors-primary;
     border: 2px solid $colors-primary;
     background-color: $colors-white;
     gap: 4px;
+
+    &:hover {
+      background-color: $colors-primary;
+      color: $colors-white;
+
+      .plus {
+        fill: $colors-white;
+      }
+    }
+
   }
 
   &_save {
     color: $colors-white;
     background-color: $colors-primary;
+    border: solid 2px $colors-white;
+
+    &:hover {
+      color: $colors-primary;
+      background-color: $colors-white;
+      border: 2px solid $colors-primary;
+    }
   }
 
   &_delete {
     color: $colors-primary;
     background-color: $colors-white;
     padding: 0;
+
+    &:hover {
+      opacity: 0.65;
+    }
   }
 
   &_menu {

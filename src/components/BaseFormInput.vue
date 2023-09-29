@@ -1,7 +1,6 @@
 <template>
   <label class="form__label">
     {{ labelText }}
-    {{ value }}
     <input
       :type="inputType"
       :name="`input-${inputName}`"
@@ -9,6 +8,7 @@
       :class="className"
       class="form__input"
       v-bind="inputAttributes"
+      required
       @blur="$emit('input', $event.target.value)"
     />
   </label>

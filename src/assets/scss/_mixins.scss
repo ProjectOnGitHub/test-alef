@@ -15,7 +15,7 @@
   background-color: transparent;
   border: 0;
   cursor: pointer;
-  transition: 0.5s;
+  transition: 0.5s ease;
 }
 
 @mixin unmarkedList {

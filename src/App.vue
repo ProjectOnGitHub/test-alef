@@ -37,7 +37,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .root {
   @include gridable();
   grid-template-columns: 1fr;
@@ -53,4 +53,5 @@ export default {
   background-color: $colors-white;
   box-shadow: $box-shadow;
 }
+
 </style>

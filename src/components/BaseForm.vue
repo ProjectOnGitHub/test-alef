@@ -14,6 +14,8 @@
   &__list {
     @include flexible();
     @include unmarkedList;
+    flex-direction: column;
+    gap: 10px;
 
     &-item {
       @include flexible();
@@ -22,6 +24,7 @@
       flex-grow: 1;
     }
   }
+
 }
 
 </style>
