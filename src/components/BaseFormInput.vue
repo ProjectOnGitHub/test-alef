@@ -7,9 +7,10 @@
       :value="value"
       :class="className"
       class="form__input"
+      :placeholder="placeholderName"
       v-bind="inputAttributes"
       required
-      @blur="$emit('input', $event.target.value)"
+      @input="$emit('input', $event.target.value)"
     />
   </label>
 </template>
@@ -33,6 +34,7 @@ export default {
       default: '',
     },
     value: [String, Number],
+    placeholderName: [String, Number],
     className: {
       type: String,
       default: '',
@@ -40,9 +42,9 @@ export default {
   },
   data() {
     return {
-      minLengthValue: 0,
+      minLengthValue: 1,
       maxLengthValue: 100,
-      minValue: 16,
+      minValue: 1,
       maxValue: 100,
     };
   },

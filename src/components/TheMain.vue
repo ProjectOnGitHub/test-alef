@@ -7,12 +7,14 @@
         >
           <base-form-input
             v-model="personName"
+            placeholder-name="Введите ваше имя"
             input-name="name"
             input-type="text"
             label-text="Имя"
           />
           <base-form-input
             v-model="personAge"
+            placeholder-name="Введите ваш возраст"
             input-name="age"
             input-type="number"
             label-text="Возраст"
@@ -46,12 +48,14 @@
             >
               <base-form-input
                 v-model="item.name"
+                placeholder-name="Введите имя ребёнка"
                 input-name="name"
                 input-type="text"
                 label-text="Имя"
               />
               <base-form-input
                 v-model="item.age"
+                placeholder-name="Введите возраст ребёнка"
                 input-name="age"
                 input-type="number"
                 label-text="Возраст"
@@ -71,6 +75,7 @@
             v-show="showButtonSave"
             class-name="button_save"
             name-button="save"
+            :is-disabled="isSaveButtonDisabled"
             @click="addPersonInfo"
           >
             Сохранить
@@ -128,6 +133,13 @@ export default {
 
     isMaxChildren() {
       return this.children.length >= 5;
+    },
+    isSaveButtonDisabled() {
+      return (
+        !this.personName
+        || !this.personAge
+        || this.children.some(child => !child.name || !child.age)
+      );
     },
   },
 

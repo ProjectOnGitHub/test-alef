@@ -43,15 +43,14 @@ export default {
   height: max-content;
 
   &:disabled,
-
   &:disabled:hover {
     cursor: default;
-    color: $colors-gray-s;
+    color: $colors-gray;
     background-color: $colors-white;
     border: 2px solid $colors-gray-s;
 
     .plus {
-      fill: $colors-gray-s;
+      fill: $colors-gray;
     }
   }
 
