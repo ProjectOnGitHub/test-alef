@@ -26,7 +26,7 @@
         >
           <base-button
             :is-disabled="isMaxChildren"
-            :class-name="button_add"
+            class-name="button_add"
             name-button="menu"
             @click="addComponent"
           >
@@ -73,7 +73,7 @@
         <transition name="fade">
           <base-button
             v-show="showButtonSave"
-            :class-name="button_save"
+            class-name="button_save"
             name-button="save"
             :is-disabled="isSaveButtonDisabled"
             @click="addPersonInfo"

@@ -15,7 +15,11 @@ import TheHeader from './components/TheHeader.vue';
 import TheMain from './components/TheMain.vue';
 
 export default {
-  components: { TheHeader, TheMain, TheFooter },
+  components: {
+    TheHeader,
+    TheMain,
+    TheFooter,
+  },
 
   data() {
     return {
@@ -46,7 +50,7 @@ export default {
   box-sizing: border-box;
   min-height: 100vh;
   grid-template-rows: auto 1fr auto;
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
   font-weight: normal;
   font-size: 14px;
   color: $colors-black;

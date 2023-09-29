@@ -1,7 +1,7 @@
 <template>
   <button
     type="button"
-    :class="className"
+    :class="`${isActive}` ? `${className} active` : className"
     :disabled="isDisabled"
     :name="`button-${nameButton}`"
     class="button"
@@ -25,6 +25,9 @@ export default {
     isDisabled: {
       type: Boolean,
       default: false,
+    },
+    isActive: {
+      type: Boolean,
     },
   },
 };
