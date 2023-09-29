@@ -9,6 +9,7 @@
         <ul class="header__menu">
           <li class="header__menu-item">
             <base-button
+              :is-active="isActive"
               class-name="button_menu"
               name-button="menu"
               @click="$emit('clickToFormButton')"
@@ -18,6 +19,7 @@
           </li>
           <li class="header__menu-item">
             <base-button
+              :is-active="!isActive"
               class-name="button_menu"
               name-button="menu"
               @click="$emit('clickToPreviewButton')"
@@ -40,6 +42,11 @@ export default {
   components: {
     BaseButton,
     SvgIcon,
+  },
+  props: {
+    isActive: {
+      type: Boolean,
+    },
   },
   data() {
     return {

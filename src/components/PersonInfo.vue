@@ -1,31 +1,21 @@
 <template>
-  <div class="person">
+  <div
+    v-if="personInfo.name"
+    class="person"
+  >
     <div class="person__info">
       <h2 class="person__info-title">
         Персональные данные
       </h2>
-      <p
-        v-if="personInfo.name"
-        class="person__info-description"
-      >
+      <p class="person__info-description">
         {{ personInfo.name }}, {{ personInfo.age }} лет
-      </p>
-      <p
-        v-else-if="!personInfo.name"
-        class="person__info-description"
-      >
-        Персональные данные не внесены
       </p>
     </div>
     <div class="person__info">
       <h2 class="person__info-title">
         Дети
       </h2>
-
-      <ul
-        v-if="childrenInfo.name"
-        class="person__list"
-      >
+      <ul class="person__list">
         <li
           v-for="(child, index) in childrenInfo"
           :key="index"
@@ -34,12 +24,16 @@
           {{ child.name }}, {{ child.age }} лет
         </li>
       </ul>
-      <p
-        v-else-if="!childrenInfo.name"
-        class="person__info-description"
-      >
-        Данные о детях не внесены
-      </p>
+    </div>
+  </div>
+  <div
+    v-else
+    class="person"
+  >
+    <div class="person__info">
+      <h2 class="person__info-title">
+        Персональные данные не внесены
+      </h2>
     </div>
   </div>
 </template>

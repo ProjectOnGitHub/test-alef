@@ -1,7 +1,7 @@
 <template>
   <button
     type="button"
-    :class="`${isActive}` ? `${className} active` : className"
+    :class="isActive ? `${className} active` : className"
     :disabled="isDisabled"
     :name="`button-${nameButton}`"
     class="button"
@@ -100,6 +100,14 @@ export default {
     color: $colors-gray;
     background-color: $colors-white;
     padding: 0;
+
+    &:hover {
+      opacity: 0.65;
+    }
+
+    &.active {
+      color: $colors-primary;
+    }
   }
 }
 </style>

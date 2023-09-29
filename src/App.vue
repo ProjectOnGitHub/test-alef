@@ -1,6 +1,7 @@
 <template>
   <div class="root">
     <the-header
+      :is-active="isActive"
       @clickToFormButton="viewForm"
       @clickToPreviewButton="viewPreview"
     />
