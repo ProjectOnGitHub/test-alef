@@ -22,6 +22,11 @@
       gap: 10px 18px;
       align-items: center;
       flex-grow: 1;
+      justify-content: flex-end;
+
+      @media screen and (max-width: $mobile) {
+        flex-wrap: wrap;
+      }
     }
   }
 

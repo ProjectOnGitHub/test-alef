@@ -65,6 +65,11 @@ export default {
     align-items: center;
     gap: 24px;
     max-width: 1366px;
+
+    @media screen and (max-width: $desktop) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
   }
 
   &__navigation {

@@ -1,6 +1,8 @@
 <template>
   <footer class="footer">
-    <p class="footer__text">All rights reserved</p>
+    <p class="footer__text">
+      All rights reserved
+    </p>
   </footer>
 </template>
 
