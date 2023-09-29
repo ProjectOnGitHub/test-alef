@@ -86,6 +86,9 @@ export default {
     border: none;
     line-height: 1.71;
     box-sizing: border-box;
+    &::placeholder {
+      color: red;
+    }
 
     &:focus {
       outline: none;
