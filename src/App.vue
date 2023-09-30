@@ -5,7 +5,10 @@
       @clickToFormButton="viewForm"
       @clickToPreviewButton="viewPreview"
     />
-    <the-main :is-active="isActive" />
+    <the-main
+      :is-active="isActive"
+      @update:isActive="updateIsActive"
+    />
     <the-footer />
   </div>
 </template>
@@ -37,6 +40,9 @@ export default {
       if (this.isActive) {
         this.isActive = false;
       }
+    },
+    updateIsActive(newIsActive) {
+      this.isActive = newIsActive;
     },
   },
 };

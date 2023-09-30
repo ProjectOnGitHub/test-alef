@@ -124,6 +124,7 @@ export default {
         age: null,
       },
       children: [],
+      localIsActive: this.isActive,
     };
   },
   computed: {
@@ -162,6 +163,8 @@ export default {
         name: this.personName,
         age: this.personAge,
       };
+      this.localIsActive = false;
+      this.$emit('update:isActive', this.localIsActive);
     },
   },
 };
