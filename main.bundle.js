@@ -36,6 +36,9 @@ __webpack_require__.r(__webpack_exports__);
       if (this.isActive) {
         this.isActive = false;
       }
+    },
+    updateIsActive: function updateIsActive(newIsActive) {
+      this.isActive = newIsActive;
     }
   }
 });
@@ -234,6 +237,11 @@ __webpack_require__.r(__webpack_exports__);
     BaseButton: _BaseButton_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     SvgIcon: _SvgIcon_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
+  props: {
+    isActive: {
+      type: Boolean
+    }
+  },
   data: function data() {
     return {
       images: _utils_images__WEBPACK_IMPORTED_MODULE_0__["default"]
@@ -286,7 +294,8 @@ __webpack_require__.r(__webpack_exports__);
         name: null,
         age: null
       },
-      children: []
+      children: [],
+      localIsActive: this.isActive
     };
   },
   computed: {
@@ -321,6 +330,8 @@ __webpack_require__.r(__webpack_exports__);
         name: this.personName,
         age: this.personAge
       };
+      this.localIsActive = false;
+      this.$emit('update:isActive', this.localIsActive);
     }
   }
 });
@@ -345,6 +356,9 @@ var render = function render() {
   return _c("div", {
     staticClass: "root"
   }, [_c("the-header", {
+    attrs: {
+      "is-active": _vm.isActive
+    },
     on: {
       clickToFormButton: _vm.viewForm,
       clickToPreviewButton: _vm.viewPreview
@@ -352,6 +366,9 @@ var render = function render() {
   }), _vm._v(" "), _c("the-main", {
     attrs: {
       "is-active": _vm.isActive
+    },
+    on: {
+      "update:isActive": _vm.updateIsActive
     }
   }), _vm._v(" "), _c("the-footer")], 1);
 };
@@ -378,7 +395,7 @@ var render = function render() {
     _c = _vm._self._c;
   return _c("button", {
     staticClass: "button",
-    class: "".concat(_vm.isActive) ? "".concat(_vm.className, " active") : _vm.className,
+    class: _vm.isActive ? "".concat(_vm.className, " active") : _vm.className,
     attrs: {
       type: "button",
       disabled: _vm.isDisabled,
@@ -507,32 +524,38 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("div", {
+  return _vm.personInfo.name ? _c("div", {
     staticClass: "person"
   }, [_c("div", {
     staticClass: "person__info"
   }, [_c("h2", {
     staticClass: "person__info-title"
-  }, [_vm._v("\n      Персональные данные\n    ")]), _vm._v(" "), _vm.personInfo.name ? _c("p", {
+  }, [_vm._v("\n      Персональные данные\n    ")]), _vm._v(" "), _c("p", {
     staticClass: "person__info-description"
-  }, [_vm._v("\n      " + _vm._s(_vm.personInfo.name) + ", " + _vm._s(_vm.personInfo.age) + " лет\n    ")]) : !_vm.personInfo.name ? _c("p", {
-    staticClass: "person__info-description"
-  }, [_vm._v("\n      Персональные данные не внесены\n    ")]) : _vm._e()]), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n      " + _vm._s(_vm.personInfo.name) + ", " + _vm._s(_vm.personInfo.age) + " лет\n    ")])]), _vm._v(" "), _c("div", {
     staticClass: "person__info"
   }, [_c("h2", {
     staticClass: "person__info-title"
-  }, [_vm._v("\n      Дети\n    ")]), _vm._v(" "), _vm.childrenInfo.name ? _c("ul", {
+  }, [_vm._v("\n      Дети\n    ")]), _vm._v(" "), _c("ul", {
     staticClass: "person__list"
   }, _vm._l(_vm.childrenInfo, function (child, index) {
     return _c("li", {
       key: index,
       staticClass: "person__list-item"
     }, [_vm._v("\n        " + _vm._s(child.name) + ", " + _vm._s(child.age) + " лет\n      ")]);
-  }), 0) : !_vm.childrenInfo.name ? _c("p", {
-    staticClass: "person__info-description"
-  }, [_vm._v("\n      Данные о детях не внесены\n    ")]) : _vm._e()])]);
+  }), 0)])]) : _c("div", {
+    staticClass: "person"
+  }, [_vm._m(0)]);
 };
-var staticRenderFns = [];
+var staticRenderFns = [function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("div", {
+    staticClass: "person__info"
+  }, [_c("h2", {
+    staticClass: "person__info-title"
+  }, [_vm._v("\n      Персональные данные не внесены\n    ")])]);
+}];
 render._withStripped = true;
 
 
@@ -633,6 +656,7 @@ var render = function render() {
     staticClass: "header__menu-item"
   }, [_c("base-button", {
     attrs: {
+      "is-active": _vm.isActive,
       "class-name": "button_menu",
       "name-button": "menu"
     },
@@ -645,6 +669,7 @@ var render = function render() {
     staticClass: "header__menu-item"
   }, [_c("base-button", {
     attrs: {
+      "is-active": !_vm.isActive,
       "class-name": "button_menu",
       "name-button": "menu"
     },
