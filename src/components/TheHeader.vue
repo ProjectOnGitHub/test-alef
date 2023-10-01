@@ -39,6 +39,7 @@ import SvgIcon from './SvgIcon.vue';
 import BaseButton from './BaseButton.vue';
 
 export default {
+  name: 'TheHeader',
   components: {
     BaseButton,
     SvgIcon,

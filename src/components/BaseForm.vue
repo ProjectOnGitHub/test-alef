@@ -4,8 +4,12 @@
   </form>
 </template>
 
+<script>
+export default {
+  name: 'BaseForm',
+};
+</script>
 <style lang="scss">
-
 .form {
   @include flexible();
   @include defaultContainer;

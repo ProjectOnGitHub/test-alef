@@ -40,6 +40,7 @@
 
 <script>
 export default {
+  name: 'PersonInfo',
   props: {
     personInfo: {
       type: Object,
@@ -47,7 +48,7 @@ export default {
       },
     },
     childrenInfo: {
-      type: Object,
+      type: Array,
       default: () => {
       },
     },

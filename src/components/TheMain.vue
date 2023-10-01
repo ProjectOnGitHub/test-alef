@@ -6,14 +6,14 @@
           title="Персональные данные"
         >
           <base-form-input
-            v-model="personName"
+            v-model.trim="personName"
             placeholder-name="Введите ваше имя"
             input-name="name"
             input-type="text"
             label-text="Имя"
           />
           <base-form-input
-            v-model="personAge"
+            v-model.trim.number="personAge"
             placeholder-name="Введите ваш возраст"
             input-name="age"
             input-type="number"
@@ -47,14 +47,14 @@
               class="form__list-item"
             >
               <base-form-input
-                v-model="item.name"
+                v-model.trim="item.name"
                 placeholder-name="Введите имя ребёнка"
                 input-name="name"
                 input-type="text"
                 label-text="Имя"
               />
               <base-form-input
-                v-model="item.age"
+                v-model.trim.number="item.age"
                 placeholder-name="Введите возраст ребёнка"
                 input-name="age"
                 input-type="number"
@@ -101,6 +101,7 @@ import PersonInfo from './PersonInfo.vue';
 import SvgIcon from './SvgIcon.vue';
 
 export default {
+  name: 'TheMain',
   components: {
     SvgIcon,
     PersonInfo,
