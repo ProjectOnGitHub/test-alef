@@ -54,6 +54,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'BaseButton',
   props: {
     className: {
       type: String,
@@ -75,6 +76,20 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use!./node_modules/vue-loader/lib/index.js??vue-loader-options!./src/components/BaseForm.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use!./node_modules/vue-loader/lib/index.js??vue-loader-options!./src/components/BaseForm.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'BaseForm'
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use!./node_modules/vue-loader/lib/index.js??vue-loader-options!./src/components/BaseFormFieldset.vue?vue&type=script&lang=js&":
 /*!***********************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use!./node_modules/vue-loader/lib/index.js??vue-loader-options!./src/components/BaseFormFieldset.vue?vue&type=script&lang=js& ***!
@@ -84,6 +99,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'BaseFormFieldset',
   props: {
     title: {
       type: String,
@@ -107,6 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'BaseFormInput',
   props: {
     labelText: {
       type: String,
@@ -169,13 +186,14 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'PersonInfo',
   props: {
     personInfo: {
       type: Object,
       default: function _default() {}
     },
     childrenInfo: {
-      type: Object,
+      type: Array,
       default: function _default() {}
     }
   }
@@ -192,6 +210,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'SvgIcon',
   props: {
     iconName: {
       type: String,
@@ -214,7 +233,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'TheFooter'
+});
 
 /***/ }),
 
@@ -233,6 +254,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'TheHeader',
   components: {
     BaseButton: _BaseButton_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     SvgIcon: _SvgIcon_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
@@ -272,6 +294,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'TheMain',
   components: {
     SvgIcon: _SvgIcon_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
     PersonInfo: _PersonInfo_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
@@ -719,7 +742,7 @@ var render = function render() {
     model: {
       value: _vm.personName,
       callback: function callback($$v) {
-        _vm.personName = $$v;
+        _vm.personName = typeof $$v === "string" ? $$v.trim() : $$v;
       },
       expression: "personName"
     }
@@ -733,7 +756,7 @@ var render = function render() {
     model: {
       value: _vm.personAge,
       callback: function callback($$v) {
-        _vm.personAge = $$v;
+        _vm.personAge = _vm._n(typeof $$v === "string" ? $$v.trim() : $$v);
       },
       expression: "personAge"
     }
@@ -776,7 +799,7 @@ var render = function render() {
       model: {
         value: item.name,
         callback: function callback($$v) {
-          _vm.$set(item, "name", $$v);
+          _vm.$set(item, "name", typeof $$v === "string" ? $$v.trim() : $$v);
         },
         expression: "item.name"
       }
@@ -790,7 +813,7 @@ var render = function render() {
       model: {
         value: item.age,
         callback: function callback($$v) {
-          _vm.$set(item, "age", $$v);
+          _vm.$set(item, "age", _vm._n(typeof $$v === "string" ? $$v.trim() : $$v));
         },
         expression: "item.age"
       }
@@ -2426,17 +2449,19 @@ component.options.__file = "src/components/BaseButton.vue"
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _BaseForm_vue_vue_type_template_id_3ee59636___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BaseForm.vue?vue&type=template&id=3ee59636& */ "./src/components/BaseForm.vue?vue&type=template&id=3ee59636&");
-/* harmony import */ var _BaseForm_vue_vue_type_style_index_0_id_3ee59636_lang_scss___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BaseForm.vue?vue&type=style&index=0&id=3ee59636&lang=scss& */ "./src/components/BaseForm.vue?vue&type=style&index=0&id=3ee59636&lang=scss&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _BaseForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BaseForm.vue?vue&type=script&lang=js& */ "./src/components/BaseForm.vue?vue&type=script&lang=js&");
+/* harmony import */ var _BaseForm_vue_vue_type_style_index_0_id_3ee59636_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./BaseForm.vue?vue&type=style&index=0&id=3ee59636&lang=scss& */ "./src/components/BaseForm.vue?vue&type=style&index=0&id=3ee59636&lang=scss&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 ;
 
 
 /* normalize component */
 
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  script,
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _BaseForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _BaseForm_vue_vue_type_template_id_3ee59636___WEBPACK_IMPORTED_MODULE_0__.render,
   _BaseForm_vue_vue_type_template_id_3ee59636___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
   false,
@@ -2742,6 +2767,19 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_node_modules_vue_loader_lib_index_js_vue_loader_options_BaseButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use!../../node_modules/vue-loader/lib/index.js??vue-loader-options!./BaseButton.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use!./node_modules/vue-loader/lib/index.js??vue-loader-options!./src/components/BaseButton.vue?vue&type=script&lang=js&");
  /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_node_modules_vue_loader_lib_index_js_vue_loader_options_BaseButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./src/components/BaseForm.vue?vue&type=script&lang=js&":
+/*!**************************************************************!*\
+  !*** ./src/components/BaseForm.vue?vue&type=script&lang=js& ***!
+  \**************************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_node_modules_vue_loader_lib_index_js_vue_loader_options_BaseForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use!../../node_modules/vue-loader/lib/index.js??vue-loader-options!./BaseForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use!./node_modules/vue-loader/lib/index.js??vue-loader-options!./src/components/BaseForm.vue?vue&type=script&lang=js&");
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_node_modules_vue_loader_lib_index_js_vue_loader_options_BaseForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
